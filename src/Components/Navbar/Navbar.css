@@ -1,0 +1,21 @@
+.navbar-container {
+  background-color: var(--secondary-grey-color);
+}
+
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  width: 80%;
+  margin: auto;
+  padding: 20px;
+}
+.navbar-btn {
+  display: flex;
+  gap: 12px;
+  flex-wrap: wrap;
+  position: relative;
+}
+.navbar-categorie {
+  display: flex;
+  justify-content: center;
+}

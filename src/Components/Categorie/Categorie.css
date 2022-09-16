@@ -1,0 +1,9 @@
+.categorie {
+  background-color: var(--primary-grey-color);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  border-radius: 8px;
+  padding: 12px;
+}

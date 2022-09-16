@@ -1,5 +1,5 @@
 .button {
-  font-family: "Nunito Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
   font-weight: 700;
   border: 0;
   border-radius: 12px;
@@ -9,12 +9,11 @@
 }
 .button--primary {
   color: white;
-  background-color: #1ea7fd;
+  background-color: var(--primary-button-color);
 }
 .button--secondary {
-  color: #333;
-  background-color: transparent;
-  box-shadow: rgba(0, 0, 0, 0.15) 0px 0px 0px 1px inset;
+  color: white;
+  background-color: var(--secondary-button-color);
 }
 .button--small {
   font-size: 12px;
