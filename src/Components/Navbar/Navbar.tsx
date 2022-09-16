@@ -10,7 +10,7 @@ backgroundColor?:string;
 onhandleClick?:()=>void;
 }
 
-export const Navbar=({backgroundColor, onhandleClick }: NavbarProps)=>{
+export const Navbar=({backgroundColor, onhandleClick, ...props}: NavbarProps)=>{
     const [open, setOpen] = React.useState<boolean>(false);
 
     onhandleClick =():void=>{
@@ -23,7 +23,7 @@ export const Navbar=({backgroundColor, onhandleClick }: NavbarProps)=>{
             <div className="navbar-btn">
                 <div className="navbar-categorie">
                 <Button primary size="medium" onClick={onhandleClick} label="Categories" />
-                {open? <Categorie rows={["artliterature","language", "sciencenature", "general", "fooddrink", "peopleplaces", "geography", "historyholidays", "entertainment","toysgames","music", "mathematics", "religionmythology", "sportsleisure"]} position="absolute" top="36px"/>: <></>}
+                {open? <Categorie onCategory={()=>{}} rows={["artliterature","language", "sciencenature", "general", "fooddrink", "peopleplaces", "geography", "historyholidays", "entertainment","toysgames","music", "mathematics", "religionmythology", "sportsleisure"]} position="absolute" top="36px"/>: <></>}
                 </div>
                 <Button primary size="medium" label="Login" />
                 
