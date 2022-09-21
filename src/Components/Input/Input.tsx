@@ -10,7 +10,7 @@ width?:string;
 
 export const Input =({type,placeholder,width,...props}:InputProps)=>{
 return(<div>
-    <input className="input" type={type} style={{width}} placeholder={placeholder}/>
+    <input className="input" type={type} style={{width}} name={placeholder} placeholder={placeholder}/>
     
 </div>)
 }

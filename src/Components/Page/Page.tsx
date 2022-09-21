@@ -1,6 +1,7 @@
 import axios from "axios";
 import React from "react";
 import { Categorie } from "../Categorie/Categorie";
+import { Input } from "../Input/Input";
 import { Navbar } from "../Navbar/Navbar";
 import { Quiz } from "../Quiz/Quiz";
 import "./Page.css"
@@ -19,6 +20,7 @@ export const Page=({onhandleClick, onCategory,goToNext, getSolution, ...props}:P
     const [question, setQuestion]=React.useState<any>([]);
     const [isDisabled, setDisabled]=React.useState<boolean>(true);
     const [isVisibile, setVisibile]= React.useState<string>("hidden")
+    
     onhandleClick =():void=>{
     setOpen(!open);
     }
@@ -31,14 +33,26 @@ export const Page=({onhandleClick, onCategory,goToNext, getSolution, ...props}:P
     }
 
     goToNext =():void=>{
-    fetchQuestion();
+    
+        fetchQuestion();
      }
-     getSolution=():void=>{
-setVisibile("visible")
+    getSolution=():void=>{ 
+      const input:any =  document.querySelector("input")
+      const inputValue:string = input.value;
+      if (answer.toLowerCase() == inputValue.toLowerCase()){
+        input.style.border = "3px solid green"
+      }else {
+          input.style.border = "3px solid red"
+        console.log("wrong")
+      }
+    setVisibile("visible")
      }
     
      const fetchQuestion =()=>{
          setVisibile("hidden");
+         const input:any =  document.querySelector("input")
+      input.value = ""
+      input.style.border = "none"
         axios.get(`https://api.api-ninjas.com/v1/trivia?category=${category}`,
         { headers:{'X-Api-Key': 'B/rIZnz+5j+AZE1/Zb+SgA==y7X3fvlolUCHh2My'}})
         .then((response)=>{
