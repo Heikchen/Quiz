@@ -13,6 +13,7 @@ const Template: ComponentStory<typeof Input>=(args)=><Input {...args}/>
 export const textInput = Template.bind({});
 textInput.args={
     type:"text",
+    width:"80%",
     placeholder:"text",
 }
 export const passwordInput = Template.bind({});

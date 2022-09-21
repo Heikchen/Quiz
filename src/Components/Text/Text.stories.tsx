@@ -6,6 +6,10 @@ import { Text} from "./Text";
 export default{
     title: "Components/Text",
     component: Text,
+    argTypes: {
+    visibility: { control: 'text' },
+  },
+
 } as ComponentMeta<typeof Text>;
 
 const Template: ComponentStory<typeof Text>= (args) =><Text {...args}/>;

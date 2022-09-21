@@ -8,7 +8,7 @@ interface CategorieProps{
     rows:string[];
     position:any;
     top:string;
-    onCategory?:()=>void;
+    onCategory?:(event:any)=>void;
 }
 export const Categorie=({rows, position,top, onCategory,...props}: CategorieProps)=>{
     return(<div className="categorie" style={{top, position}}>{rows.map((item)=>(<Link onClick={onCategory}label={item}/>))}</div>)
