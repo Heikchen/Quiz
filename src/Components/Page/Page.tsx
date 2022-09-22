@@ -7,13 +7,10 @@ import { Quiz } from "../Quiz/Quiz";
 import "./Page.css"
 
 interface PageProps{
-onhandleClick: ()=>void;
-onCategory:(event:any)=> void;
-goToNext:()=>void;
-getSolution:()=>void;
+
 }
 
-export const Page=({onhandleClick, onCategory,goToNext, getSolution, ...props}:PageProps)=>{
+export const Page=({})=>{
     const [open, setOpen] = React.useState<boolean>(false);
     const [category, setCategory]= React.useState<string>("toysgames");
     const [answer, setAnswer]=React.useState<any>([]);
@@ -21,29 +18,28 @@ export const Page=({onhandleClick, onCategory,goToNext, getSolution, ...props}:P
     const [isDisabled, setDisabled]=React.useState<boolean>(true);
     const [isVisibile, setVisibile]= React.useState<string>("hidden")
     
-    onhandleClick =():void=>{
+    const onhandleClick =():void=>{
     setOpen(!open);
     }
 
-    onCategory=(event:any):void=>{
+    const onCategory=(event:any):void=>{
      const newCategory = event.target.innerText;
      console.log(event.target.innerText)
      setCategory(newCategory);
      setOpen(!open)
     }
 
-    goToNext =():void=>{
+    const goToNext =():void=>{
     
         fetchQuestion();
      }
-    getSolution=():void=>{ 
+    const getSolution=():void=>{ 
       const input:any =  document.querySelector("input")
       const inputValue:string = input.value;
       if (answer.toLowerCase() == inputValue.toLowerCase()){
         input.style.border = "3px solid green"
       }else {
           input.style.border = "3px solid red"
-        console.log("wrong")
       }
     setVisibile("visible")
      }
