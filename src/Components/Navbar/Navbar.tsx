@@ -8,14 +8,11 @@ import "./Navbar.css"
 interface NavbarProps{
 backgroundColor?:string;
 onhandleClick?:()=>void;
+open:any;
 }
 
-export const Navbar=({backgroundColor, onhandleClick, ...props}: NavbarProps)=>{
-    const [open, setOpen] = React.useState<boolean>(false);
-
-    onhandleClick =():void=>{
-    setOpen(!open);
-}
+export const Navbar=({backgroundColor, onhandleClick, open, ...props}: NavbarProps)=>{
+   
     return(
     <div style={{backgroundColor}} className="navbar-container">
         <div className="navbar">
@@ -23,7 +20,7 @@ export const Navbar=({backgroundColor, onhandleClick, ...props}: NavbarProps)=>{
             <div className="navbar-btn">
                 <div className="navbar-categorie">
                 <Button primary size="medium" onClick={onhandleClick} label="Categories" />
-                {open? <Categorie onCategory={()=>{}} rows={["artliterature","language", "sciencenature", "general", "fooddrink", "peopleplaces", "geography", "historyholidays", "entertainment","toysgames","music", "mathematics", "religionmythology", "sportsleisure"]} position="absolute" top="36px"/>: <></>}
+                {open}
                 </div>
                 <Button primary size="medium" label="Login" />
                 

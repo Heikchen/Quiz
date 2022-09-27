@@ -6,7 +6,7 @@ interface LinkProps{
     color?: string;
     label:string;
     size?: "small "| "medium" | "large";
-    onClick?: ()=>void;
+    onClick?: (event:any)=>void;
     
 }
 
