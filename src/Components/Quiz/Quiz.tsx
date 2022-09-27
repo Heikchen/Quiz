@@ -32,7 +32,7 @@ export const Quiz =({height, answer,category, question, disabled, visibility, ge
         </div>
         <div className="quiz-btn">
         <Text label={answer} fontSize="16px" visibility={visibility} color="white"/>
-        <div>
+        <div className="quiz-answer">
         <Button primary={true} disabled={disabled} label='Answer' onClick={getSolution}/>
          <Button primary={true} disabled={disabled} label='Next' onClick={goToNext}/>
          </div>

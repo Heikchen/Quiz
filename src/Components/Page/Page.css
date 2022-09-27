@@ -1,3 +1,4 @@
 .main {
-  height: 300px;
+  min-height: 450px;
+  margin-top: 100px;
 }
