@@ -1,6 +1,7 @@
 import axios from "axios";
 import React from "react";
 import { Categorie } from "../Categorie/Categorie";
+import { Footer } from "../Footer/Footer";
 import { Input } from "../Input/Input";
 import { Navbar } from "../Navbar/Navbar";
 import { Quiz } from "../Quiz/Quiz";
@@ -48,7 +49,7 @@ export const Page=({})=>{
          setVisibile("hidden");
          const input:any =  document.querySelector("input")
       input.value = ""
-      input.style.border = "none"
+      input.style.border = "3px solid transparent"
         axios.get(`https://api.api-ninjas.com/v1/trivia?category=${category}`,
         { headers:{'X-Api-Key': 'B/rIZnz+5j+AZE1/Zb+SgA==y7X3fvlolUCHh2My'}})
         .then((response)=>{
@@ -61,8 +62,12 @@ export const Page=({})=>{
        
      },[category])
      
-    return(<div>
-        <Navbar onhandleClick={onhandleClick} open={open? <Categorie onCategory={onCategory} rows={["artliterature","language", "sciencenature", "general", "fooddrink", "peopleplaces", "geography", "historyholidays", "entertainment","toysgames","music", "mathematics", "religionmythology", "sportsleisure"]} position="absolute" top="36px"/>: <></>}/>
+    return(
+    <div>
+       <Navbar onhandleClick={onhandleClick} open={open? <Categorie onCategory={onCategory} rows={["artliterature","language", "sciencenature", "general", "fooddrink", "peopleplaces", "geography", "historyholidays", "entertainment","toysgames","music", "mathematics", "religionmythology", "sportsleisure"]} position="absolute" top="36px"/>: <></>}/>
+       <div className="main">
         <Quiz category={category} answer={answer} question={question} getSolution={getSolution} goToNext={goToNext} disabled={isDisabled} visibility={isVisibile} height="200px"/>
+       </div> 
+        <Footer backgroundColor="var(--primary-button-color)" height="148px" width="100%" />
     </div>)
 }

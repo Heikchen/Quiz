@@ -24,8 +24,8 @@
 .quiz-input {
   margin-bottom: 24px;
   margin-right: 14px;
+  border: 3px solid transparent;
 }
-
 .quiz-btn {
   display: flex;
   column-gap: 24px;

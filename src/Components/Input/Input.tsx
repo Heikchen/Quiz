@@ -6,11 +6,12 @@ interface InputProps{
 type:string;
 placeholder?:string;
 width?:string;
+border?: string;
 }
 
-export const Input =({type,placeholder,width,...props}:InputProps)=>{
+export const Input =({type,placeholder,width, border, ...props}:InputProps)=>{
 return(<div>
-    <input className="input" type={type} style={{width}} name={placeholder} placeholder={placeholder}/>
+    <input className="input" type={type} style={{width, border}} name={placeholder} placeholder={placeholder}/>
     
 </div>)
 }

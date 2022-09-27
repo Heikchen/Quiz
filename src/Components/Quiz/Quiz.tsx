@@ -28,7 +28,7 @@ export const Quiz =({height, answer,category, question, disabled, visibility, ge
              <Text fontSize="16px" label={question} color='white' />
              </div>
             <div className="quiz-input">
-        <Input type='text'placeholder='Answer...' width='100%'/>
+        <Input type='text'placeholder='Answer...' width='100%' border='3px solid transparent'/>
         </div>
         <div className="quiz-btn">
         <Text label={answer} fontSize="16px" visibility={visibility} color="white"/>

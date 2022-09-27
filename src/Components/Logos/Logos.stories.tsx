@@ -11,11 +11,23 @@ export default{
 
 const Template: ComponentStory<typeof Logos>=(args)=><Logos {...args}/>
 
-export const githubLogo = Template.bind({});
-githubLogo.args={
+export const GithubLogo = Template.bind({});
+GithubLogo.args={
    logo: "github",
    size:"3",
-    link:"#",
+    link:"#"
    
+};
+export const FacebookLogo = Template.bind({});
+FacebookLogo.args={
+     logo: "facebook",
+        size:"3",
+    link:"#"
+};
+export const TwitterLogo = Template.bind({});
+TwitterLogo.args={
+     logo: "twitter",
+   size:"3",
+    link:"#"
 }
 

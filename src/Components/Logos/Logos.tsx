@@ -7,7 +7,7 @@ interface LogosProps{
     link:string,
     size: string,
 }
-export const Logos =({color, link, size, logo,...props}: LogosProps)=>{
+export const Logos =({color, link, size, logo}: LogosProps)=>{
 return(<div>
     <div>
     <a href={link} style={{color}}>
