@@ -15,4 +15,5 @@ export const PrimaryFooter = Template.bind({});
 
 PrimaryFooter.args={
 backgroundColor: "var(--primary-button-color)",
-height: "148px"}
+height: "148px",
+width: "100%"}

@@ -17,7 +17,7 @@ goToNext?:()=>void,
 
 export const Quiz =({height, answer,category, question, disabled, visibility, getSolution, goToNext,...props}:QuizProps)=>{
     
-    return(<div>
+    return(<div className="container-question">
         <div className="header-quiz">
         <Text label={category} fontSize="24px"  textTransform="capitalize"/>
         </div>
